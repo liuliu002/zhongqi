@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>资源查询｜中科卓刊</title>
+  <meta name="description" content="中科卓刊资源查询，提供 SCI/SSCI、EI、A&HCI 期刊信息检索与筛选。">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="search">
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <span>您好，欢迎访问中科卓刊学术辅导平台。</span>
+      <div class="top-bar-actions">
+        <a href="mailto:lengcui2025@163.com">邮箱：lengcui2025@163.com</a>
+        <a href="search.html">资源查询</a>
+        <a href="updates.html">最新动态</a>
+        <a href="downloads.html">资源下载</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-mark"><img src="assets/images/brand-mark.svg" alt="中科卓刊"></span>
+        <span class="brand-text">
+          <strong>中科卓刊</strong>
+          <span>期刊发表 论文辅导</span>
+        </span>
+      </a>
+      <button class="nav-toggle" type="button">导航</button>
+      <nav class="site-nav">
+        <a class="nav-link" href="index.html">首页</a>
+        <details class="nav-dropdown" data-group="services">
+          <summary class="nav-link">辅导方向</summary>
+          <div class="dropdown-menu">
+            <a class="dropdown-link" href="domestic.html">国内辅导</a>
+            <a class="dropdown-link" href="international.html">国际辅导</a>
+            <a class="dropdown-link" href="students.html">留学生辅导</a>
+            <a class="dropdown-link" href="proposals.html">课题申报</a>
+            <a class="dropdown-link" href="medical-proposals.html">医学申报</a>
+          </div>
+        </details>
+        <details class="nav-dropdown" data-group="resources">
+          <summary class="nav-link">资源中心</summary>
+          <div class="dropdown-menu">
+            <a class="dropdown-link" href="search.html">资源查询</a>
+            <a class="dropdown-link" href="updates.html">最新动态</a>
+            <a class="dropdown-link" href="downloads.html">资源下载</a>
+          </div>
+        </details>
+        <a class="nav-link" href="about.html">关于我们</a>
+        <a class="nav-link nav-cta" href="contact.html">联系</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="container hero">
+      <div class="hero-grid">
+        <div>
+          <h1>资源查询</h1>
+          <p>支持 SCI/SSCI、EI 与 A&HCI 期刊信息检索，可按影响指数、分区与学科筛选。</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#query">开始查询</a>
+            <a class="btn btn-ghost" href="contact.html">获取选刊建议</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <h3>查询说明</h3>
+          <ul>
+            <li>支持名称 / ISSN / 简称搜索</li>
+            <li>按分区与影响指数等筛选</li>
+            <li>结果支持分页浏览</li>
+            <li>数据为快照，若需更新请邮件联系</li>
+            <li>点击卡片查看期刊详情</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="query" class="section">
+      <div class="container">
+        <div class="search-panel card" data-animate>
+          <div class="search-controls">
+            <div class="search-field">
+              <label for="dbSelect">数据库</label>
+              <select id="dbSelect">
+                <option value="SCI">SCIE/SSCI</option>
+                <option value="EI">EI</option>
+                <option value="AHCI">A&HCI</option>
+              </select>
+            </div>
+            <div class="search-field search-field-wide">
+              <label for="searchInput">期刊名称 / ISSN / 简称</label>
+              <input id="searchInput" type="text" placeholder="请输入名称或 ISSN 或简称">
+            </div>
+            <div class="search-actions">
+              <button id="searchButton" class="btn btn-primary" type="button">查询</button>
+              <button id="resetButton" class="btn btn-ghost" type="button">重置</button>
+            </div>
+          </div>
+
+          <div class="search-filters" data-scope="SCI">
+            <div class="filter-group">
+              <span class="filter-label">类别</span>
+              <div class="filter-chips" data-filter="category">
+                <button class="filter-chip is-active" type="button" data-value="全部">全部</button>
+                <button class="filter-chip" type="button" data-value="SCIE">SCIE</button>
+                <button class="filter-chip" type="button" data-value="SSCI">SSCI</button>
+              </div>
+            </div>
+            <div class="filter-group">
+              <span class="filter-label">影响指数</span>
+              <div class="filter-chips" data-filter="impact">
+                <button class="filter-chip is-active" type="button" data-value="全部">全部</button>
+                <button class="filter-chip" type="button" data-value="<1">&lt;1</button>
+                <button class="filter-chip" type="button" data-value="1-3">1-3</button>
+                <button class="filter-chip" type="button" data-value="3-5">3-5</button>
+                <button class="filter-chip" type="button" data-value="5-10">5-10</button>
+                <button class="filter-chip" type="button" data-value=">10">&gt;10</button>
+              </div>
+            </div>
+            <div class="filter-group">
+              <span class="filter-label">自引率</span>
+              <div class="filter-chips" data-filter="selfCitation">
+                <button class="filter-chip is-active" type="button" data-value="全部">全部</button>
+                <button class="filter-chip" type="button" data-value="0-5%">0-5%</button>
+                <button class="filter-chip" type="button" data-value="5-10%">5-10%</button>
+                <button class="filter-chip" type="button" data-value="10-20%">10-20%</button>
+                <button class="filter-chip" type="button" data-value="20-30%">20-30%</button>
+                <button class="filter-chip" type="button" data-value="30-50%">30-50%</button>
+                <button class="filter-chip" type="button" data-value="50%以上">50%以上</button>
+              </div>
+            </div>
+            <div class="filter-group">
+              <span class="filter-label">国内分区</span>
+              <div class="filter-chips" data-filter="partition">
+                <button class="filter-chip is-active" type="button" data-value="全部">全部</button>
+                <button class="filter-chip" type="button" data-value="1区">1区</button>
+                <button class="filter-chip" type="button" data-value="2区">2区</button>
+                <button class="filter-chip" type="button" data-value="3区">3区</button>
+                <button class="filter-chip" type="button" data-value="4区">4区</button>
+              </div>
+            </div>
+            <div class="filter-group">
+              <span class="filter-label">TOP 期刊</span>
+              <div class="filter-chips" data-filter="top">
+                <button class="filter-chip is-active" type="button" data-value="全部">全部</button>
+                <button class="filter-chip" type="button" data-value="是">是</button>
+                <button class="filter-chip" type="button" data-value="否">否</button>
+              </div>
+            </div>
+            <div class="filter-group">
+              <span class="filter-label">学科</span>
+              <div class="filter-select">
+                <select id="subjectSelect">
+                  <option value="全部">全部</option>
+                  <option value="MATHEMATICS">MATHEMATICS</option>
+                  <option value="CHEMISTRY">CHEMISTRY</option>
+                  <option value="ENGINEERING">ENGINEERING</option>
+                  <option value="GEOSCIENCES">GEOSCIENCES</option>
+                  <option value="MICROBIOLOGY">MICROBIOLOGY</option>
+                  <option value="MATERIALS SCIENCE">MATERIALS SCIENCE</option>
+                  <option value="ECONOMICS & BUSINESS">ECONOMICS & BUSINESS</option>
+                  <option value="CLINICAL MEDICINE">CLINICAL MEDICINE</option>
+                  <option value="BIOLOGY & BIOCHEMISTRY">BIOLOGY & BIOCHEMISTRY</option>
+                  <option value="PSYCHIATRY & PSYCHOLOGY">PSYCHIATRY & PSYCHOLOGY</option>
+                  <option value="PLANT & ANIMAL SCIENCE">PLANT & ANIMAL SCIENCE</option>
+                  <option value="SOCIAL SCIENCES, GENERAL">SOCIAL SCIENCES, GENERAL</option>
+                  <option value="PHARMACOLOGY & TOXICOLOGY">PHARMACOLOGY & TOXICOLOGY</option>
+                  <option value="COMPUTER SCIENCE">COMPUTER SCIENCE</option>
+                  <option value="PHYSICS">PHYSICS</option>
+                  <option value="NEUROSCIENCE & BEHAVIOR">NEUROSCIENCE & BEHAVIOR</option>
+                  <option value="AGRICULTURAL SCIENCES">AGRICULTURAL SCIENCES</option>
+                  <option value="ENVIRONMENT & ECOLOGY">ENVIRONMENT & ECOLOGY</option>
+                  <option value="SPACE SCIENCE">SPACE SCIENCE</option>
+                  <option value="MOLECULAR BIOLOGY & GENETICS">MOLECULAR BIOLOGY & GENETICS</option>
+                  <option value="MULTIDISCIPLINARY">MULTIDISCIPLINARY</option>
+                  <option value="IMMUNOLOGY">IMMUNOLOGY</option>
+                </select>
+              </div>
+            </div>
+            <div class="search-sort">
+              <span class="filter-label">排序</span>
+              <div class="sort-chips">
+                <button class="sort-chip" type="button" data-sort="影响指数">影响指数</button>
+                <button class="sort-chip" type="button" data-sort="H指数">H指数</button>
+                <button class="sort-chip" type="button" data-sort="排名">排名</button>
+                <button class="sort-chip" type="button" data-sort="年发文量">年发文量</button>
+                <button class="sort-chip" type="button" data-sort="自引率">自引率</button>
+                <button class="sort-chip" type="button" data-sort="国人占比">国人占比</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="search-filters is-hidden" data-scope="EI">
+            <div class="filter-group">
+              <span class="filter-label">类别</span>
+              <div class="filter-chips" data-filter="eiType">
+                <button class="filter-chip is-active" type="button" data-value="全部">全部</button>
+                <button class="filter-chip" type="button" data-value="Journal">Journal</button>
+                <button class="filter-chip" type="button" data-value="Proceeding">Proceeding</button>
+                <button class="filter-chip" type="button" data-value="Trade journal">Trade journal</button>
+                <button class="filter-chip" type="button" data-value="Book series">Book series</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="search-filters is-hidden" data-scope="AHCI">
+            <div class="filter-group">
+              <span class="filter-label">学科</span>
+              <div class="filter-select">
+                <select id="ahciSubjectSelect">
+                  <option value="全部">全部</option>
+                  <option value="HISTORY">HISTORY</option>
+                  <option value="LANGUAGE & LINGUISTICS">LANGUAGE & LINGUISTICS</option>
+                  <option value="HUMANITIES, MULTIDISCIPLINARY">HUMANITIES, MULTIDISCIPLINARY</option>
+                  <option value="RELIGION">RELIGION</option>
+                  <option value="LITERATURE">LITERATURE</option>
+                  <option value="ARCHAEOLOGY">ARCHAEOLOGY</option>
+                  <option value="ART">ART</option>
+                  <option value="MUSIC">MUSIC</option>
+                  <option value="ASIAN STUDIES">ASIAN STUDIES</option>
+                  <option value="HISTORY & PHILOSOPHY OF SCIENCE">HISTORY & PHILOSOPHY OF SCIENCE</option>
+                  <option value="LITERATURE, ROMANCE">LITERATURE, ROMANCE</option>
+                  <option value="ARCHITECTURE">ARCHITECTURE</option>
+                  <option value="LITERARY REVIEWS">LITERARY REVIEWS</option>
+                  <option value="CULTURAL STUDIES">CULTURAL STUDIES</option>
+                  <option value="CLASSICS">CLASSICS</option>
+                  <option value="MEDIEVAL & RENAISSANCE STUDIES">MEDIEVAL & RENAISSANCE STUDIES</option>
+                  <option value="FILM, RADIO, TELEVISION">FILM, RADIO, TELEVISION</option>
+                  <option value="THEATER">THEATER</option>
+                  <option value="LITERARY THEORY & CRITICISM">LITERARY THEORY & CRITICISM</option>
+                  <option value="LITERATURE, GERMAN, DUTCH, SCANDINAVIAN">LITERATURE, GERMAN, DUTCH, SCANDINAVIAN</option>
+                  <option value="LITERATURE, BRITISH ISLES">LITERATURE, BRITISH ISLES</option>
+                  <option value="LITERATURE, AMERICAN">LITERATURE, AMERICAN</option>
+                  <option value="FOLKLORE">FOLKLORE</option>
+                  <option value="LITERATURE, SLAVIC">LITERATURE, SLAVIC</option>
+                  <option value="POETRY">POETRY</option>
+                  <option value="DANCE">DANCE</option>
+                  <option value="LITERATURE, AFRICAN, AUSTRALIAN, CANADIAN">LITERATURE, AFRICAN, AUSTRALIAN, CANADIAN</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="results-header">
+          <div>
+            <h2>查询结果</h2>
+            <p>结果支持分页浏览，点击卡片查看详情。</p>
+          </div>
+          <div class="results-meta">
+            <span id="resultCount">共 0 条</span>
+            <span id="resultStatus" class="results-status"></span>
+          </div>
+        </div>
+        <div id="results" class="results-grid"></div>
+        <div id="pagination" class="pagination"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="contact-card" data-animate>
+          <div>
+            <strong>需要定制选刊建议？</strong>
+            <p>提供研究方向与目标期刊节点，我们将输出可执行的选刊清单。</p>
+          </div>
+          <div class="contact-actions">
+            <a class="email-link" href="contact.html">lengcui2025@163.com</a>
+            <button class="copy-button" type="button" data-copy="lengcui2025@163.com">复制邮箱</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="detailModal" class="detail-modal" aria-hidden="true">
+    <div class="detail-modal-backdrop" data-detail-close></div>
+    <div class="detail-modal-panel" role="dialog" aria-modal="true" aria-labelledby="detailTitle">
+      <button class="detail-close" type="button" data-detail-close aria-label="关闭详情">关闭</button>
+      <div class="detail-header">
+        <div id="detailCover" class="detail-cover"></div>
+        <div class="detail-head-text">
+          <h3 id="detailTitle"></h3>
+          <p id="detailSubtitle"></p>
+          <div id="detailTags" class="detail-tags"></div>
+        </div>
+      </div>
+      <div id="detailBody" class="detail-body"></div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>中科卓刊</strong>
+        <p>期刊发表论文辅导 · 国内 · 国际 · 留学生</p>
+      </div>
+      <div class="footer-columns">
+        <div class="footer-column">
+          <h4>服务资源</h4>
+          <a href="search.html">资源查询</a>
+          <a href="downloads.html">资料下载</a>
+          <a href="updates.html">最新动态</a>
+        </div>
+        <div class="footer-column">
+          <h4>辅导方向</h4>
+          <a href="domestic.html">国内期刊辅导</a>
+          <a href="international.html">国际期刊辅导</a>
+          <a href="students.html">留学生辅导</a>
+          <a href="proposals.html">课题申报</a>
+          <a href="medical-proposals.html">医学申报</a>
+        </div>
+        <div class="footer-column">
+          <h4>关于我们</h4>
+          <a href="about.html">机构简介</a>
+          <a href="contact.html">联系邮箱</a>
+          <a href="contact.html">合作咨询</a>
+        </div>
+        <div class="footer-column">
+          <h4>学术咨询</h4>
+          <span>邮箱：lengcui2025@163.com</span>
+          <span>服务时间：09:00-21:00</span>
+          <span>回复周期：24-48 小时</span>
+        </div>
+      </div>
+    </div>
+    <div class="container footer-legal">
+      <span>© 2026 中科卓刊 · 学术辅导平台</span>
+      <span>学术规范优先 · 诚信透明服务</span>
+    </div>
+  </footer>
+
+  <div class="floating-contact" aria-label="悬浮联系">
+    <details class="floating-contact-panel">
+      <summary class="floating-contact-trigger">联系</summary>
+      <div class="floating-contact-body">
+        <span class="floating-contact-title">联系邮箱</span>
+        <a class="floating-contact-email" href="mailto:lengcui2025@163.com">lengcui2025@163.com</a>
+        <button class="floating-contact-copy" type="button" data-copy="lengcui2025@163.com">复制邮箱</button>
+      </div>
+    </details>
+    <button class="floating-contact-trigger floating-contact-top" type="button" data-scroll-top aria-label="返回顶部">顶部</button>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/search.js"></script>
+</body>
+</html>
